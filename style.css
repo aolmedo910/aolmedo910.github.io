@@ -9,6 +9,7 @@ body {
     display: flex;
     height: 100vh;
     margin: 0;
+    overflow: hidden; /* Evitar scroll cuando el menú se abre */
 }
 
 .overlay {
@@ -20,6 +21,22 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
     z-index: 1; /* Colocamos por encima del contenido */
+}
+
+.menu-toggle {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 3; /* Aseguramos que el menú esté encima de otros elementos */
+}
+
+.bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.3s;
 }
 
 .sidebar {
@@ -76,4 +93,21 @@ button {
 
 button:hover {
     background-color: #ffaa00;
+}
+
+/* Cambios para el menú hamburguesa (cuando se activa) */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: 10px;
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(45deg);
+    position: relative;
+    top: -10px;
 }
