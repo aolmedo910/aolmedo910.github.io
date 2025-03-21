@@ -27,3 +27,8 @@ document.getElementById("overlay").onclick = function() {
 document.getElementById("menu-toggle").onclick = function() {
     toggleSidebar();
 };
+
+// Función para mostrar la alerta cuando se hace clic en el botón
+function mostrarAlerta() {
+    alert("Gracias por hacer clic en el botón");
+}
