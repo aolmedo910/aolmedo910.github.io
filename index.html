@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div class="sidebar">
+    <div id="overlay" class="overlay"></div> <!-- Fondo cuando la barra lateral se abre -->
+    
+    <div class="sidebar" id="sidebar">
         <ul>
             <li>Fry</li>
             <li>Bender</li>
@@ -20,11 +21,12 @@
             <li>Scruffy</li>
         </ul>
     </div>
-
+    
     <div class="content">
-        <h1>¡Hola mundo!</h1>
+        <h1>¡Hola, mundo!</h1>
         <p>Bienvenidos wenos pal pico.</p>
         <button onclick="mostrarAlerta()">Botón</button>
+        <button onclick="toggleSidebar()">Abrir Barra Lateral</button>
     </div>
 
     <script src="script.js"></script>
