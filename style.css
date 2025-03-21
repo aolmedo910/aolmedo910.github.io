@@ -1,0 +1,62 @@
+body {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 24px;
+    color: white;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    background-image: url("fondo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: flex; /* Permite organizar la lista y el contenido en columnas */
+    height: 100vh;
+    margin: 0;
+}
+
+.sidebar {
+    width: 250px; /* Ancho de la barra lateral */
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+    color: white;
+    padding: 20px;
+    height: 100vh;
+}
+
+.sidebar ul {
+    list-style: none; /* Elimina los números o íconos */
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    padding: 15px;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.content {
+    flex: 1; /* Ocupa el resto del espacio */
+    display: flex;
+    margin-left: -250px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+button {
+    font-family: inherit;
+    font-size: 24px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #ffcc00;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ffaa00;
+}
