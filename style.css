@@ -1,57 +1,28 @@
 body {
     font-family: "Comic Sans MS", "Comic Sans", cursive;
     font-size: 24px;
+    color: white;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
     background-image: url("fondo.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     
-    display: flex;
+    display: flex; /* Permite organizar la lista y el contenido en columnas */
     height: 100vh;
     margin: 0;
-    overflow: hidden; /* Evitar scroll cuando el menú se abre */
-}
-
-.overlay {
-    display: none; /* Oculto por defecto */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
-    z-index: 1; /* Colocamos por encima del contenido */
-}
-
-.menu-toggle {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    cursor: pointer;
-    z-index: 3; /* Aseguramos que el menú esté encima de otros elementos */
-}
-
-.bar {
-    width: 30px;
-    height: 4px;
-    background-color: white;
-    margin: 6px 0;
-    transition: 0.3s;
 }
 
 .sidebar {
-    position: fixed;
-    width: 0; /* Inicia con un ancho de 0 para estar oculta */
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
+    width: 250px; /* Ancho de la barra lateral */
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
     color: white;
     padding: 20px;
-    transition: 0.3s; /* Transición suave cuando cambia el tamaño */
-    z-index: 2; /* Colocamos por encima del contenido */
+    height: 100vh;
 }
 
 .sidebar ul {
-    list-style: none;
+    list-style: none; /* Elimina los números o íconos */
     padding: 0;
     margin: 0;
 }
@@ -66,19 +37,14 @@ body {
 }
 
 .content {
-    flex-grow: 1;
-    padding: 20px;
-    height: 100vh;
-    box-sizing: border-box;
-    transition: margin-left 0.3s; /* Transición para el movimiento del contenido */
-    z-index: 0; /* Debajo de la barra lateral */
-}
-
-h1, p {
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
-    font-size: 24px;
+    flex: 1; /* Ocupa el resto del espacio */
+    display: flex;
+    margin-left: -250px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     color: white;
-    text-shadow: 2px 2px 4px black;
 }
 
 button {
@@ -93,21 +59,4 @@ button {
 
 button:hover {
     background-color: #ffaa00;
-}
-
-/* Cambios para el menú hamburguesa (cuando se activa) */
-.menu-toggle.active .bar:nth-child(1) {
-    transform: rotate(-45deg);
-    position: relative;
-    top: 10px;
-}
-
-.menu-toggle.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle.active .bar:nth-child(3) {
-    transform: rotate(45deg);
-    position: relative;
-    top: -10px;
 }
